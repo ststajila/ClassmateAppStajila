@@ -17,6 +17,9 @@
 		14F181AB2AD6E7ED00D3598C /* ClassmateAppStajilaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F181AA2AD6E7ED00D3598C /* ClassmateAppStajilaTests.swift */; };
 		14F181B52AD6E7ED00D3598C /* ClassmateAppStajilaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F181B42AD6E7ED00D3598C /* ClassmateAppStajilaUITests.swift */; };
 		14F181B72AD6E7ED00D3598C /* ClassmateAppStajilaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F181B62AD6E7ED00D3598C /* ClassmateAppStajilaUITestsLaunchTests.swift */; };
+		14F181C42AD6E82A00D3598C /* Classmate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F181C32AD6E82A00D3598C /* Classmate.swift */; };
+		14F181C62AD6EBA400D3598C /* StudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F181C52AD6EBA400D3598C /* StudentsViewController.swift */; };
+		14F181C82AD6EBC300D3598C /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F181C72AD6EBC300D3598C /* QuizViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		14F181B02AD6E7ED00D3598C /* ClassmateAppStajilaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClassmateAppStajilaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14F181B42AD6E7ED00D3598C /* ClassmateAppStajilaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassmateAppStajilaUITests.swift; sourceTree = "<group>"; };
 		14F181B62AD6E7ED00D3598C /* ClassmateAppStajilaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassmateAppStajilaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		14F181C32AD6E82A00D3598C /* Classmate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classmate.swift; sourceTree = "<group>"; };
+		14F181C52AD6EBA400D3598C /* StudentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsViewController.swift; sourceTree = "<group>"; };
+		14F181C72AD6EBC300D3598C /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +110,10 @@
 				14F181902AD6E7EC00D3598C /* AppDelegate.swift */,
 				14F181922AD6E7EC00D3598C /* SceneDelegate.swift */,
 				14F181942AD6E7EC00D3598C /* ViewController.swift */,
+				14F181C52AD6EBA400D3598C /* StudentsViewController.swift */,
+				14F181C72AD6EBC300D3598C /* QuizViewController.swift */,
 				14F181962AD6E7EC00D3598C /* Main.storyboard */,
+				14F181C32AD6E82A00D3598C /* Classmate.swift */,
 				14F1819C2AD6E7ED00D3598C /* Assets.xcassets */,
 				14F1819E2AD6E7ED00D3598C /* LaunchScreen.storyboard */,
 				14F181A12AD6E7ED00D3598C /* Info.plist */,
@@ -262,6 +271,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				14F1819B2AD6E7EC00D3598C /* ClassmateAppStajila.xcdatamodeld in Sources */,
+				14F181C82AD6EBC300D3598C /* QuizViewController.swift in Sources */,
+				14F181C42AD6E82A00D3598C /* Classmate.swift in Sources */,
+				14F181C62AD6EBA400D3598C /* StudentsViewController.swift in Sources */,
 				14F181952AD6E7EC00D3598C /* ViewController.swift in Sources */,
 				14F181912AD6E7EC00D3598C /* AppDelegate.swift in Sources */,
 				14F181932AD6E7EC00D3598C /* SceneDelegate.swift in Sources */,
