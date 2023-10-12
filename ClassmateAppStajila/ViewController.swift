@@ -9,12 +9,19 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var student1 = Classmate(name: "Stanislav", nickname: "Swimislav", age: 17)
-    var student2 = Classmate(name: "Miles", nickname: <#T##String#>, age: <#T##Int#>)
+    var student1 = Classmate(name: "Stanislav", nickname: "Swimi", age: 17)
+    var student2 = Classmate(name: "Miles", nickname: "Mile", age: 17)
+    var student3 = Classmate(name: "Andrew", nickname: "All about me", age: 17)
+    var students: [Classmate]!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Home"
+        
+//        students.append(student1)
+//        students.append(student2)
+//        students.append(student3)
         // Do any additional setup after loading the view.
     }
 
