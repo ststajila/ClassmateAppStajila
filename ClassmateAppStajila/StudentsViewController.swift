@@ -13,6 +13,13 @@ class StudentsViewController: UIViewController {
     @IBOutlet weak var showOutlet: UITextView!
     var i = 0
     
+    @IBOutlet weak var nameOutlet: UITextField!
+    
+    @IBOutlet weak var nicknameOutlet: UITextField!
+    
+    @IBOutlet weak var statusOutlet: UILabel!
+    
+    @IBOutlet weak var ageOutlet: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Student Info"
@@ -21,26 +28,58 @@ class StudentsViewController: UIViewController {
     }
     
     @IBAction func sortByNameAction(_ sender: Any) {
+        classmates.sort(by: {$0.name < $1.name})
+        
+        i = 0
+        showOutlet.text = "Name: \(classmates[i].name)\nNickname: \(classmates[i].nickname)\nAge: \(classmates[i].age)"
+        
     }
     
     @IBAction func nextAction(_ sender: Any) {
-        if i < classmates.count && i != 0{
-            showOutlet.text = "Name: \(classmates[i].name)\nNickname: \(classmates[i].nickname)\nAge: \(classmates[i].age)"
+        if i < classmates.count - 1{
+            showOutlet.text = "Name: \(classmates[i+1].name)\nNickname: \(classmates[i+1].nickname)\nAge: \(classmates[i+1].age)"
         i += 1
-        } else if i == 0{
+        } else{
+            i = 0
             showOutlet.text = "Name: \(classmates[i].name)\nNickname: \(classmates[i].nickname)\nAge: \(classmates[i].age)"
         }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func addAction(_ sender: Any) {
+        
+        if nameOutlet.text != "" && nicknameOutlet.text != "" && ageOutlet.text != ""{
+            if isInArray(array: classmates, name: nameOutlet.text!) {
+                if Int(ageOutlet.text!) != nil{
+                    
+                    classmates.append(Classmate(name: nameOutlet.text!, nickname: nicknameOutlet.text!, age: Int(ageOutlet.text!)!))
+                    
+                    statusOutlet.text = "A new classmate was successfully added"
+                    statusOutlet.backgroundColor = UIColor.green
+                    
+                } else{
+                    statusOutlet.text = "Input a whole, positive number"
+                    statusOutlet.backgroundColor = UIColor.red
+                }
+            }else{
+                statusOutlet.text = "This classmate is already registered"
+                statusOutlet.backgroundColor = UIColor.red
+            }
+        }else{
+            statusOutlet.text = "One or more of required fields are empty"
+            statusOutlet.backgroundColor = UIColor.red
+        }
+        
     }
-    */
+    
+    
+    func isInArray(array: [Classmate], name: String) -> Bool{
+        for studentName in array{
+            if studentName.name == name{
+                return false
+            }
+        }
+        return true
+    }
+    
 
 }
