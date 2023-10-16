@@ -9,6 +9,7 @@ import UIKit
 
 class StudentsViewController: UIViewController {
 
+    var delegate: ClassmatesCollectionDelegate!
     var classmates: [Classmate] = []
     @IBOutlet weak var showOutlet: UITextView!
     var i = 0
@@ -29,6 +30,7 @@ class StudentsViewController: UIViewController {
     
     @IBAction func sortByNameAction(_ sender: Any) {
         classmates.sort(by: {$0.name < $1.name})
+        delegate.changeStudents(stu: classmates)
         
         i = 0
         showOutlet.text = "Name: \(classmates[i].name)\nNickname: \(classmates[i].nickname)\nAge: \(classmates[i].age)"
@@ -55,6 +57,9 @@ class StudentsViewController: UIViewController {
                     
                     statusOutlet.text = "A new classmate was successfully added"
                     statusOutlet.backgroundColor = UIColor.green
+                    nameOutlet.text = ""
+                    nicknameOutlet.text = ""
+                    ageOutlet.text = ""
                     
                 } else{
                     statusOutlet.text = "Input a whole, positive number"
@@ -69,12 +74,14 @@ class StudentsViewController: UIViewController {
             statusOutlet.backgroundColor = UIColor.red
         }
         
+        delegate.changeStudents(stu: classmates)
+        
     }
     
     
     func isInArray(array: [Classmate], name: String) -> Bool{
         for studentName in array{
-            if studentName.name == name{
+            if studentName.name.lowercased() == name.lowercased(){
                 return false
             }
         }

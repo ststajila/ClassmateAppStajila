@@ -9,13 +9,18 @@ import UIKit
 
 class QuizViewController: UIViewController {
 
+    @IBOutlet weak var Q1: UILabel!
+    @IBOutlet weak var Q2: UILabel!
+    @IBOutlet weak var Q3: UILabel!
+    
+    
+    var classmatesArray: [Classmate]!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Quiz"
         // Do any additional setup after loading the view.
     }
     
-
     /*
     // MARK: - Navigation
 

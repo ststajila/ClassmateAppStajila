@@ -7,7 +7,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+protocol ClassmatesCollectionDelegate {
+    func changeStudents(stu: [Classmate])
+}
+
+class ViewController: UIViewController, ClassmatesCollectionDelegate {
     
     var student1 = Classmate(name: "Stanislav", nickname: "Swimi", age: 17)
     var student2 = Classmate(name: "Miles", nickname: "Mile", age: 17)
@@ -38,11 +42,17 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "studentInfoScreen"{
             let nvc = segue.destination as! StudentsViewController
+            nvc.delegate = self
             nvc.classmates = students
         }else{
-            
+            let nvc = segue.destination as! QuizViewController
+            nvc.classmatesArray = students
         }
         
+    }
+    
+    func changeStudents(stu: [Classmate]) {
+        students = stu
     }
 }
 
