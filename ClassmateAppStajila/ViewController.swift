@@ -13,9 +13,9 @@ protocol ClassmatesCollectionDelegate {
 
 class ViewController: UIViewController, ClassmatesCollectionDelegate {
     
-    var student1 = Classmate(name: "Stanislav", nickname: "Swimi", age: 17)
-    var student2 = Classmate(name: "Miles", nickname: "Mile", age: 17)
-    var student3 = Classmate(name: "Andrew", nickname: "All about me", age: 17)
+    var student1 = Classmate(name: "Stanislav", nickname: "Swimi", age: 17, level: .senior)
+    var student2 = Classmate(name: "Miles", nickname: "Mile", age: 17, level: .junior)
+    var student3 = Classmate(name: "Andrew", nickname: "All about me", age: 17, level: .junior)
     var students: [Classmate] = []
     
     

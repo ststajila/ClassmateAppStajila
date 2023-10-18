@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wrC-Ev-yJw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wrC-Ev-yJw">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -105,7 +106,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zme-wG-GiM">
-                                <rect key="frame" x="18" y="357" width="356" height="35"/>
+                                <rect key="frame" x="18" y="430" width="356" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Add"/>
@@ -114,15 +115,25 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xSR-A8-7lG">
-                                <rect key="frame" x="12" y="428" width="369" height="128"/>
+                                <rect key="frame" x="12" y="512" width="369" height="154"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="23"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="T6T-F6-ikB">
+                                <rect key="frame" x="16" y="373" width="361" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Freshman"/>
+                                    <segment title="Sophmore"/>
+                                    <segment title="Junior"/>
+                                    <segment title="Senior"/>
+                                </segments>
+                            </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r2S-B5-z8L">
-                                <rect key="frame" x="132" y="573" width="128" height="35"/>
+                                <rect key="frame" x="132" y="682" width="128" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Sort by Name"/>
@@ -131,7 +142,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i3L-Lu-Ujo">
-                                <rect key="frame" x="314" y="573" width="60" height="35"/>
+                                <rect key="frame" x="314" y="682" width="60" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Next"/>
@@ -146,6 +157,7 @@
                     <navigationItem key="navigationItem" id="4Zv-mC-2MN"/>
                     <connections>
                         <outlet property="ageOutlet" destination="Msy-QC-ddh" id="WzI-Aw-qgS"/>
+                        <outlet property="gradeLevelPicker" destination="T6T-F6-ikB" id="Sbn-1z-8SF"/>
                         <outlet property="nameOutlet" destination="MCW-5r-O2x" id="P6o-Bf-C2x"/>
                         <outlet property="nicknameOutlet" destination="O9U-wf-6Sf" id="hei-eu-QlM"/>
                         <outlet property="showOutlet" destination="xSR-A8-7lG" id="TUg-xG-Dos"/>
@@ -203,6 +215,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9h-nq-CI7">
+                                <rect key="frame" x="16" y="343" width="361" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Submit"/>
+                                <connections>
+                                    <action selector="submitAction:" destination="Cy0-TV-KQf" eventType="touchUpInside" id="NC3-Q2-Hu9"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mof-nP-6mz">
+                                <rect key="frame" x="21" y="413" width="350" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="AUA-mG-QHt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -212,6 +240,10 @@
                         <outlet property="Q1" destination="Vfr-wc-ysa" id="Y96-Rg-MoU"/>
                         <outlet property="Q2" destination="ylD-af-V6M" id="gdc-Ie-sKs"/>
                         <outlet property="Q3" destination="0OK-kn-mjg" id="Td4-uS-e6j"/>
+                        <outlet property="gradeLabel" destination="mof-nP-6mz" id="sCQ-xh-H1s"/>
+                        <outlet property="q1Outlet" destination="HiO-7i-jzP" id="8xx-1W-aW6"/>
+                        <outlet property="q2Outlet" destination="02L-k8-PW0" id="uBR-Hi-BxF"/>
+                        <outlet property="q3Outlet" destination="cUD-KN-9Sa" id="jt8-5k-jsk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QWt-h0-ceK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -239,7 +271,7 @@
     </scenes>
     <resources>
         <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

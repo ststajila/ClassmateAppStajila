@@ -12,6 +12,7 @@ class StudentsViewController: UIViewController {
     var delegate: ClassmatesCollectionDelegate!
     var classmates: [Classmate] = []
     @IBOutlet weak var showOutlet: UITextView!
+    @IBOutlet weak var gradeLevelPicker: UISegmentedControl!
     var i = 0
     
     @IBOutlet weak var nameOutlet: UITextField!
@@ -25,7 +26,14 @@ class StudentsViewController: UIViewController {
         super.viewDidLoad()
         self.title = "Student Info"
         
-        showOutlet.text = "Name: \(classmates[0].name)\nNickname: \(classmates[0].nickname)\nAge: \(classmates[0].age)"
+        var studentLevel = ""
+        switch classmates[0].level{
+        case .freshman: studentLevel = "Freshman"
+        case .sophmore: studentLevel = "Sophmore"
+        case .junior: studentLevel = "Junior"
+        default: studentLevel = "Senior"
+        }
+        showOutlet.text = "Name: \(classmates[0].name)\nNickname: \(classmates[0].nickname)\nAge: \(classmates[0].age) \nGrade: \(studentLevel)"
     }
     
     @IBAction func sortByNameAction(_ sender: Any) {
@@ -33,27 +41,59 @@ class StudentsViewController: UIViewController {
         delegate.changeStudents(stu: classmates)
         
         i = 0
-        showOutlet.text = "Name: \(classmates[i].name)\nNickname: \(classmates[i].nickname)\nAge: \(classmates[i].age)"
+        var studentLevel = ""
+        switch classmates[i].level{
+        case .freshman: studentLevel = "Freshman"
+        case .sophmore: studentLevel = "Sophmore"
+        case .junior: studentLevel = "Junior"
+        default: studentLevel = "Senior"
+        }
+        showOutlet.text = "Name: \(classmates[i].name)\nNickname: \(classmates[i].nickname)\nAge: \(classmates[i].age) \nGrade: \(studentLevel)"
         
     }
     
     @IBAction func nextAction(_ sender: Any) {
         if i < classmates.count - 1{
-            showOutlet.text = "Name: \(classmates[i+1].name)\nNickname: \(classmates[i+1].nickname)\nAge: \(classmates[i+1].age)"
+            var studentLevel = ""
+            switch classmates[i+1].level{
+            case .freshman: studentLevel = "Freshman"
+            case .sophmore: studentLevel = "Sophmore"
+            case .junior: studentLevel = "Junior"
+            default: studentLevel = "Senior"
+            }
+            showOutlet.text = "Name: \(classmates[i+1].name)\nNickname: \(classmates[i+1].nickname)\nAge: \(classmates[i+1].age) \nGrade: \(studentLevel)"
         i += 1
         } else{
             i = 0
-            showOutlet.text = "Name: \(classmates[i].name)\nNickname: \(classmates[i].nickname)\nAge: \(classmates[i].age)"
+            var studentLevel = ""
+            switch classmates[i].level{
+            case .freshman: studentLevel = "Freshman"
+            case .sophmore: studentLevel = "Sophmore"
+            case .junior: studentLevel = "Junior"
+            default: studentLevel = "Senior"
+            }
+            showOutlet.text = "Name: \(classmates[i].name)\nNickname: \(classmates[i].nickname)\nAge: \(classmates[i].age)\nGrade: \(studentLevel)"
         }
     }
     
     @IBAction func addAction(_ sender: Any) {
         
+        
         if nameOutlet.text != "" && nicknameOutlet.text != "" && ageOutlet.text != ""{
             if isInArray(array: classmates, name: nameOutlet.text!) {
                 if Int(ageOutlet.text!) != nil{
                     
-                    classmates.append(Classmate(name: nameOutlet.text!, nickname: nicknameOutlet.text!, age: Int(ageOutlet.text!)!))
+                    var tempLevel: GradeLevel!
+                    switch gradeLevelPicker.selectedSegmentIndex {
+                    case 0:
+                        tempLevel = .freshman
+                    case 1: tempLevel = .sophmore
+                    case 2: tempLevel = .junior
+                    default: tempLevel = .senior
+                        
+                    }
+                    
+                        classmates.append(Classmate(name: nameOutlet.text!, nickname: nicknameOutlet.text!, age: Int(ageOutlet.text!)!, level: tempLevel))
                     
                     statusOutlet.text = "A new classmate was successfully added"
                     statusOutlet.backgroundColor = UIColor.green
