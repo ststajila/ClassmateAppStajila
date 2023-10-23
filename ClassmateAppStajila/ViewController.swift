@@ -39,14 +39,22 @@ class ViewController: UIViewController, ClassmatesCollectionDelegate {
         performSegue(withIdentifier: "quizScreen", sender: self)
     }
     
+    
+    @IBAction func tableViewAction(_ sender: Any) {
+        performSegue(withIdentifier: "toViewController", sender: self)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "studentInfoScreen"{
             let nvc = segue.destination as! StudentsViewController
             nvc.delegate = self
             nvc.classmates = students
-        }else{
+        }else if segue.identifier == "quizScreen"{
             let nvc = segue.destination as! QuizViewController
             nvc.classmatesArray = students
+        } else{
+            let nvc =  segue.destination as! TableViewController
+            nvc.classmates = students
         }
         
     }
