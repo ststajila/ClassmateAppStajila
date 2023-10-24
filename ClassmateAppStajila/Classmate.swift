@@ -22,4 +22,13 @@ class Classmate{
         self.age = age
         self.level = level
     }
+    
+    func getLevel() -> String{
+        switch level{
+        case .freshman: return "Freshman"
+        case .sophmore: return "Sophmore"
+        case .junior: return "Junior"
+        default: return "Senior"
+        }
+    }
 }

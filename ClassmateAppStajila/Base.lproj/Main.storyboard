@@ -71,36 +71,36 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Wwq-cO-xMh" customClass="ClassmatesCell">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" id="Wwq-cO-xMh" customClass="ClassmateCell" customModule="ClassmateAppStajila" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="20.666666030883789"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wwq-cO-xMh" id="NkI-fH-BNv">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="20.666666030883789"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="E6b-Fi-8IT">
-                                                    <rect key="frame" x="0.0" y="-34" width="393" height="20.333333333333332"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="E6b-Fi-8IT">
+                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="20.666666666666668"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZt-Hd-XZ0">
-                                                            <rect key="frame" x="0.0" y="0.0" width="98.333333333333329" height="20.333333333333332"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZt-Hd-XZ0">
+                                                            <rect key="frame" x="0.0" y="0.0" width="98.333333333333329" height="20.666666666666668"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syf-eZ-raJ">
-                                                            <rect key="frame" x="98.333333333333343" y="0.0" width="98.333333333333343" height="20.333333333333332"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syf-eZ-raJ">
+                                                            <rect key="frame" x="98.333333333333343" y="0.0" width="98.333333333333343" height="20.666666666666668"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GradeLavel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bp7-C9-tuu">
-                                                            <rect key="frame" x="196.66666666666666" y="0.0" width="97.999999999999972" height="20.333333333333332"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GradeLavel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bp7-C9-tuu">
+                                                            <rect key="frame" x="196.66666666666666" y="0.0" width="97.999999999999972" height="20.666666666666668"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nickName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TE9-av-E8V">
-                                                            <rect key="frame" x="294.66666666666669" y="0.0" width="98.333333333333314" height="20.333333333333332"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nickName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TE9-av-E8V">
+                                                            <rect key="frame" x="294.66666666666669" y="0.0" width="98.333333333333314" height="20.666666666666668"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -110,9 +110,19 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="E6b-Fi-8IT" firstAttribute="leading" secondItem="NkI-fH-BNv" secondAttribute="leading" id="4HZ-vR-LV0"/>
+                                                <constraint firstAttribute="bottom" secondItem="E6b-Fi-8IT" secondAttribute="bottom" id="5Jh-Ws-rsU"/>
+                                                <constraint firstItem="E6b-Fi-8IT" firstAttribute="top" secondItem="NkI-fH-BNv" secondAttribute="top" id="Hc2-Jg-hQS"/>
                                                 <constraint firstAttribute="trailing" secondItem="E6b-Fi-8IT" secondAttribute="trailing" id="JpW-3A-UFW"/>
+                                                <constraint firstItem="E6b-Fi-8IT" firstAttribute="leading" secondItem="NkI-fH-BNv" secondAttribute="leading" id="UZz-Yw-98d"/>
+                                                <constraint firstAttribute="trailing" secondItem="E6b-Fi-8IT" secondAttribute="trailing" id="iyy-oy-atP"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="age" destination="syf-eZ-raJ" id="74a-kh-IpF"/>
+                                            <outlet property="gradeLevel" destination="bp7-C9-tuu" id="Pjp-Gp-Dp1"/>
+                                            <outlet property="name" destination="TZt-Hd-XZ0" id="HlY-Iq-t71"/>
+                                            <outlet property="nickName" destination="TE9-av-E8V" id="ruo-hu-OqY"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -128,7 +138,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="vSJ-3B-CGX"/>
                     <connections>
-                        <outlet property="classmatesCell" destination="Wwq-cO-xMh" id="ZS3-Mb-osw"/>
                         <outlet property="tableView" destination="0eX-px-P7G" id="rdO-1n-Bdb"/>
                     </connections>
                 </viewController>

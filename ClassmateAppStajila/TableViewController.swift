@@ -14,7 +14,6 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var classmatesCell: ClassmatesCell!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,11 +23,17 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return classmates.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "classmatesCell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as! ClassmateCell
+        cell.name.text = classmates[indexPath.row].name
+        cell.age.text = "\(classmates[indexPath.row].age)"
+        cell.gradeLevel.text = classmates[indexPath.row].getLevel()
+        cell.nickName.text = classmates[indexPath.row].nickname
+        
+        return cell
     }
     
     
