@@ -67,12 +67,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gd6-jf-sgw">
+                                <rect key="frame" x="141" y="326" width="110" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0eX-px-P7G">
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <stackView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" id="bQs-Jr-XdX">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name*" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sUF-mV-ZyJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="131" height="44"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Age*" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gN1-fO-t4Z">
+                                            <rect key="frame" x="131" y="0.0" width="131" height="44"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nickname*" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hMq-9L-Z7u">
+                                            <rect key="frame" x="262" y="0.0" width="131" height="44"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                </stackView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" id="Wwq-cO-xMh" customClass="ClassmateCell" customModule="ClassmateAppStajila" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="20.666666030883789"/>
+                                        <rect key="frame" x="0.0" y="94" width="393" height="20.666666030883789"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wwq-cO-xMh" id="NkI-fH-BNv">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="20.666666030883789"/>
@@ -136,8 +161,25 @@
                             <constraint firstItem="wYM-2p-h4C" firstAttribute="bottom" secondItem="0eX-px-P7G" secondAttribute="bottom" id="zA2-D2-5v0"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="vSJ-3B-CGX"/>
+                    <navigationItem key="navigationItem" id="vSJ-3B-CGX">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="RbK-bp-YLc">
+                            <rect key="frame" x="131" y="6" width="131" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Freshman"/>
+                                <segment title="Sophmore"/>
+                                <segment title="Junior"/>
+                                <segment title="Senior"/>
+                            </segments>
+                        </segmentedControl>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="gdw-yz-G8i"/>
+                    </navigationItem>
                     <connections>
+                        <outlet property="ageOutlet" destination="gN1-fO-t4Z" id="FG5-Qd-OiZ"/>
+                        <outlet property="gradeLevelPicker" destination="RbK-bp-YLc" id="n9F-Nr-Uyt"/>
+                        <outlet property="nameOutlet" destination="sUF-mV-ZyJ" id="Pke-EZ-F1V"/>
+                        <outlet property="nicknameOutlet" destination="hMq-9L-Z7u" id="zDO-vC-J3n"/>
                         <outlet property="tableView" destination="0eX-px-P7G" id="rdO-1n-Bdb"/>
                     </connections>
                 </viewController>

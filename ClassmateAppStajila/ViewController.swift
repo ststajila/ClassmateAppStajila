@@ -55,6 +55,7 @@ class ViewController: UIViewController, ClassmatesCollectionDelegate {
         } else{
             let nvc =  segue.destination as! TableViewController
             nvc.classmates = students
+            nvc.delegate = self
         }
         
     }
