@@ -29,6 +29,8 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var success = UIAlertController(title: "Success", message: "A new classmate was successfully added", preferredStyle: .alert)
     var exist = UIAlertController(title: "Error", message: "This classmate is already registered", preferredStyle: .alert)
     var invalidInput = UIAlertController(title: "Invalid Input", message: "Input a whole, positive number", preferredStyle: .alert)
+    var succesfullyRemoved = UIAlertController(title: "Success", message: "The student was successfuly removed from the list", preferredStyle: .alert)
+    var notFound = UIAlertController(title: "Error", message: "The student is not found on the list. Would you like to add them?", preferredStyle: .alert)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,10 +38,17 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.dataSource = self
         // Do any additional setup after loading the view.
         let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        let noAction = UIAlertAction(title: "No", style: .default, handler: nil)
+        let addAction = UIAlertAction(title: "Add", style: .destructive){
+            alert in self.add(self)
+        }
         blank.addAction(okAction)
         success.addAction(okAction)
         exist.addAction(okAction)
         invalidInput.addAction(okAction)
+        succesfullyRemoved.addAction(okAction)
+        notFound.addAction(noAction)
+        notFound.addAction(addAction)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -91,6 +100,17 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         delegate.changeStudents(stu: classmates)
     }
     
+    
+    @IBAction func moveToTrash(_ sender: Any) {
+        if findIndex(array: classmates, name: nameOutlet.text!) != -1{
+            classmates.remove(at: findIndex(array: classmates, name: nameOutlet.text!))
+            tableView.reloadData()
+            present(succesfullyRemoved, animated: true)
+        } else{
+            present(notFound, animated: true)
+        }
+    }
+    
     func isInArray(array: [Classmate], name: String) -> Bool{
         for studentName in array{
             if studentName.name.lowercased() == name.lowercased(){
@@ -100,4 +120,12 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return true
     }
     
+    func findIndex(array: [Classmate], name: String) -> Int{
+        for i in 0 ..< array.count{
+            if name.lowercased() == array[i].name.lowercased(){
+                return i
+            }
+        }
+        return -1
+    }
 }

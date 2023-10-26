@@ -163,8 +163,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="vSJ-3B-CGX">
                         <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="RbK-bp-YLc">
-                            <rect key="frame" x="50" y="5.6666666666666679" width="287" height="33"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="RbK-bp-YLc">
+                            <rect key="frame" x="50" y="5.6666666666666679" width="233" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="Freshman"/>
@@ -173,11 +173,18 @@
                                 <segment title="Senior"/>
                             </segments>
                         </segmentedControl>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="gdw-yz-G8i">
-                            <connections>
-                                <action selector="add:" destination="vcG-ZD-DST" id="N0X-mN-oX7"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem style="plain" systemItem="add" id="gdw-yz-G8i">
+                                <connections>
+                                    <action selector="add:" destination="vcG-ZD-DST" id="N0X-mN-oX7"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem style="plain" systemItem="trash" id="wm3-Vm-aoC">
+                                <connections>
+                                    <action selector="moveToTrash:" destination="vcG-ZD-DST" id="3W2-hl-3xx"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="ageOutlet" destination="gN1-fO-t4Z" id="FG5-Qd-OiZ"/>
@@ -189,7 +196,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CNL-r2-E5y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="973" y="710"/>
+            <point key="canvasLocation" x="971.7557251908396" y="709.85915492957747"/>
         </scene>
         <!--Students View Controller-->
         <scene sceneID="M3r-Ch-Vzu">
