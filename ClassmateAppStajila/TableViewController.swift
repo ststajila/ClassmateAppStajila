@@ -39,6 +39,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         blank.addAction(okAction)
         success.addAction(okAction)
         exist.addAction(okAction)
+        invalidInput.addAction(okAction)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -55,7 +56,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return cell
     }
     
-    func add() -> Bool{
+    @IBAction func add(_ sender: Any) {
         if nameOutlet.text != "" && nicknameOutlet.text != "" && ageOutlet.text != ""{
             if isInArray(array: classmates, name: nameOutlet.text!) {
                 if Int(ageOutlet.text!) != nil{
@@ -71,25 +72,23 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     }
                     
                     classmates.append(Classmate(name: nameOutlet.text!, nickname: nicknameOutlet.text!, age: Int(ageOutlet.text!)!, level: tempLevel))
-                    
+                    tableView.reloadData()
                     present(success, animated: true)
                     nameOutlet.text = ""
                     nicknameOutlet.text = ""
                     ageOutlet.text = ""
                     
                 } else{
-                    statusOutlet.text = "Input a whole, positive number"
-                    statusOutlet.backgroundColor = UIColor.red
+                   present(invalidInput, animated: true)
                 }
             }else{
-                present(exist)
+                present(exist, animated: true)
             }
         }else{
             present(blank, animated: true)
         }
         
         delegate.changeStudents(stu: classmates)
-        
     }
     
     func isInArray(array: [Classmate], name: String) -> Bool{
