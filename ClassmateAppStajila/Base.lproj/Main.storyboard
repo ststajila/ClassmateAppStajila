@@ -163,7 +163,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="vSJ-3B-CGX">
                         <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="RbK-bp-YLc">
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="RbK-bp-YLc">
                             <rect key="frame" x="50" y="5.6666666666666679" width="233" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
@@ -192,11 +192,28 @@
                         <outlet property="nameOutlet" destination="sUF-mV-ZyJ" id="Pke-EZ-F1V"/>
                         <outlet property="nicknameOutlet" destination="hMq-9L-Z7u" id="zDO-vC-J3n"/>
                         <outlet property="tableView" destination="0eX-px-P7G" id="rdO-1n-Bdb"/>
+                        <segue destination="YgF-bb-tHP" kind="show" identifier="studentInfo" id="sOu-7a-doK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CNL-r2-E5y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="971.7557251908396" y="709.85915492957747"/>
+        </scene>
+        <!--Info View Controller-->
+        <scene sceneID="D5v-fh-gQC">
+            <objects>
+                <viewController id="YgF-bb-tHP" customClass="InfoViewController" customModule="ClassmateAppStajila" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S9j-ly-QUj">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="s1o-KD-rTd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6aF-TF-NVh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uNu-mX-hXY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1680" y="710"/>
         </scene>
         <!--Students View Controller-->
         <scene sceneID="M3r-Ch-Vzu">

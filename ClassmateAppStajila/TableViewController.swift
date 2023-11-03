@@ -25,6 +25,8 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var gradeLevelPicker: UISegmentedControl!
     
+    var selectedClassmate = classmates[0]
+    
     var blank = UIAlertController(title: "Error", message: "One or more of required fields are empty", preferredStyle: .alert)
     var success = UIAlertController(title: "Success", message: "A new classmate was successfully added", preferredStyle: .alert)
     var exist = UIAlertController(title: "Error", message: "This classmate is already registered", preferredStyle: .alert)
@@ -127,5 +129,17 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
         }
         return -1
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let nvc = segue.destination as! InfoViewController
+        nvc.delegate = self
+        nvc.classmate = selectedClassmate
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedClassmate = classmates[indexPath.row]
+        performSegue(withIdentifier: "studentInfo", sender: self)
     }
 }
