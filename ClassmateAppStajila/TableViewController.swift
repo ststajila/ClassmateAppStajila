@@ -30,7 +30,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var blank = UIAlertController(title: "Error", message: "One or more of required fields are empty", preferredStyle: .alert)
     var success = UIAlertController(title: "Success", message: "A new classmate was successfully added", preferredStyle: .alert)
     var exist = UIAlertController(title: "Error", message: "This classmate is already registered", preferredStyle: .alert)
-    var invalidInput = UIAlertController(title: "Invalid Input", message: "Input a whole, positive number", preferredStyle: .alert)
+    var invalidInput = UIAlertController(title: "Invalid Input", message: "Input a whole, positive number into age field", preferredStyle: .alert)
     var succesfullyRemoved = UIAlertController(title: "Success", message: "The student was successfuly removed from the list", preferredStyle: .alert)
     var notFound = UIAlertController(title: "Error", message: "The student is not found on the list. Would you like to add them?", preferredStyle: .alert)
     
