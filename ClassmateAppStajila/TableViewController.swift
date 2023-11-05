@@ -25,7 +25,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var gradeLevelPicker: UISegmentedControl!
     
-    var selectedClassmate = classmates[0]
+    var selectedClassmate: Classmate?
     
     var blank = UIAlertController(title: "Error", message: "One or more of required fields are empty", preferredStyle: .alert)
     var success = UIAlertController(title: "Success", message: "A new classmate was successfully added", preferredStyle: .alert)
